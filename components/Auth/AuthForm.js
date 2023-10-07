@@ -44,7 +44,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
   }
 
   return (
-    <View style={styles.form}>
+    <View >
       <View>
         <Input
           label="Email Address"

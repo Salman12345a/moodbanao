@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Alert, StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View,ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import FlatButton from '../ui/FlatButton';
@@ -53,6 +53,11 @@ function AuthContent({ isLogin, onAuthenticate }) {
   }
 
   return (
+    <ImageBackground
+    source={require('../../image/img1.jpg')}
+    style={styles.backgroundImage}
+  >
+   
     <View style={styles.authContent}>
       <AuthForm
         isLogin={isLogin}
@@ -65,6 +70,8 @@ function AuthContent({ isLogin, onAuthenticate }) {
         </FlatButton>
       </View>
     </View>
+   
+    </ImageBackground>
   );
 }
 
@@ -72,17 +79,20 @@ export default AuthContent;
 
 const styles = StyleSheet.create({
   authContent: {
-    marginTop: 64,
+    marginTop: 370,
+    marginBottom:100,
     marginHorizontal: 32,
     padding: 16,
-    borderRadius: 8,
-    backgroundColor: Colors.primary800,
-    elevation: 2,
-    shadowColor: 'black',
-    shadowOffset: { width: 1, height: 1 },
-    shadowOpacity: 0.35,
-    shadowRadius: 4,
+    borderRadius: 15,
+   
   },
+
+  backmain: {
+  
+    backgroundColor: "white"
+
+  },
+
   buttons: {
     marginTop: 8,
   },
