@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Alert, StyleSheet, View,ImageBackground } from 'react-native';
+import { Alert, StyleSheet, View,ImageBackground,SafeAreaView, ScrollView ,Text} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import FlatButton from '../ui/FlatButton';
@@ -53,12 +53,16 @@ function AuthContent({ isLogin, onAuthenticate }) {
   }
 
   return (
+    <ScrollView contentContainerStyle={styles.container1}>
+ 
     <ImageBackground
     source={require('../../image/img1.jpg')}
     style={styles.backgroundImage}
   >
-   
+    
+
     <View style={styles.authContent}>
+   
       <AuthForm
         isLogin={isLogin}
         onSubmit={submitHandler}
@@ -72,6 +76,8 @@ function AuthContent({ isLogin, onAuthenticate }) {
     </View>
    
     </ImageBackground>
+
+    </ScrollView>
   );
 }
 
@@ -87,13 +93,32 @@ const styles = StyleSheet.create({
    
   },
 
+  container1: {
+  
+   
+    justifyContent: 'center',
+    padding: -1,
+  },
+
+  backgroundImage:{
+
+    marginTop:-19
+  },
+
   backmain: {
   
-    backgroundColor: "white"
+    backgroundColor: "white",
+
 
   },
 
   buttons: {
     marginTop: 8,
   },
+
+  container: {
+    flex: 1,
+  },
+
+
 });

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import Button from '../ui/Button';
 import Input from './Input';
@@ -44,7 +44,8 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
   }
 
   return (
-    <View >
+    <ScrollView contentContainerStyle={styles.container1}>
+    <View style={styles.form}>
       <View>
         <Input
           label="Email Address"
@@ -88,6 +89,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
         </View>
       </View>
     </View>
+    </ScrollView>
   );
 }
 
@@ -96,5 +98,16 @@ export default AuthForm;
 const styles = StyleSheet.create({
   buttons: {
     marginTop: 12,
+  },
+
+  form:{
+    color:"black"
+  },
+
+  container1: {
+  
+   
+    justifyContent: 'center',
+    padding: 16,
   },
 });

@@ -4,8 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import LoadingScreen from './screens/loadingscreen'; // Replace with the correct path to your LoadingScreen component file
-
+import LoadingScreen from "./constants/LoadingScreen";
 
 
 import LoginScreen from './screens/LoginScreen';
@@ -14,7 +13,7 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import { Colors } from './constants/styles';
 import AuthContextProvider, { AuthContext } from './store/auth-context';
 import IconButton from './components/ui/IconButton';
-import AppLoading from 'expo-app-loading';
+import CustomHeader from './constants/customheader';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,7 +28,7 @@ function AuthStack() {
         cardStyle: { backgroundColor: Colors.primary100 }, // Use 'cardStyle' for the content background
       }}
     >
-      <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Login" component={LoginScreen} options={{ header: () => <CustomHeader /> }} />
   
       <Stack.Screen name="Signup" component={SignupScreen} />
     </Stack.Navigator>
