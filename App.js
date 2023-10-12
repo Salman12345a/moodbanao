@@ -30,7 +30,8 @@ function AuthStack() {
     >
       <Stack.Screen name="Login" component={LoginScreen} options={{ header: () => <CustomHeader /> }} />
   
-      <Stack.Screen name="Signup" component={SignupScreen} />
+      <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
+
     </Stack.Navigator>
 
     </SafeAreaView>
